@@ -3,7 +3,7 @@ Repository to complete the Yalo Challenge :rocket:
 
 ## Pre-requisites
 
-1. Golang
+1. Golang (1.21 current version for this project)
 2. Postman
 3. Docker
 
