@@ -9,12 +9,12 @@ import (
 )
 
 type RecommendationController struct {
-	Service services.IRecomendationService
+	Service services.IRecommendationService
 }
 
 func (controller RecommendationController) GetRecomendations(c echo.Context) error {
 	userID := strings.ToLower(c.Param("user_id"))
-	data, err := controller.Service.GetRecomendationsByUserID(userID)
+	data, err := controller.Service.GetRecommendationsByUserID(userID)
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, err)
 	}

@@ -8,7 +8,7 @@ import (
 )
 
 type InteractionsService struct {
-	Repository repositories.IRecomendationRepository
+	Repository repositories.IInteractionsRepository
 }
 
 func (service InteractionsService) CollectUserInteractions(interactions []models.UserInteraction) error {

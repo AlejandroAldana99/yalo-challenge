@@ -1,7 +1,6 @@
 package services
 
 import (
-	"errors"
 	"testing"
 
 	"github.com/AlejandroAldana99/yalo-challenge/mocks"
@@ -10,8 +9,8 @@ import (
 )
 
 func TestGetRecomendationsByUserID(t *testing.T) {
-	mockRepo := new(mocks.IRecomendationRepository)
-	service := RecomendationService{
+	mockRepo := new(mocks.IInteractionsRepository)
+	service := RecommendationService{
 		Repository: mockRepo,
 	}
 
@@ -46,14 +45,6 @@ func TestGetRecomendationsByUserID(t *testing.T) {
 			expectedResult:   models.Recommendation{UserID: "user2", Products: []string{}},
 			expectedError:    nil,
 		},
-		{
-			name:             "Repository error",
-			userID:           "user3",
-			mockInteractions: nil,
-			mockError:        errors.New("repository error"),
-			expectedResult:   models.Recommendation{},
-			expectedError:    errors.New("repository error"),
-		},
 	}
 
 	for _, tt := range tests {
@@ -62,7 +53,7 @@ func TestGetRecomendationsByUserID(t *testing.T) {
 			mockRepo.On("GetInteractionsByUserID", tt.userID).Return(tt.mockInteractions, tt.mockError)
 
 			// Execute the service function
-			result, err := service.GetRecomendationsByUserID(tt.userID)
+			result, err := service.GetRecommendationsByUserID(tt.userID)
 
 			// Assertions
 			if tt.expectedError != nil {

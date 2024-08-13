@@ -10,12 +10,12 @@ import (
 	"github.com/AlejandroAldana99/yalo-challenge/storage"
 )
 
-type RecomendationRepository struct {
+type InteractionsRepository struct {
 	Config  config.Configuration
 	Storage storage.IStoreRepository
 }
 
-func (repo RecomendationRepository) GetInteractionsByUserID(userID string) ([]models.UserInteraction, error) {
+func (repo InteractionsRepository) GetInteractionsByUserID(userID string) ([]models.UserInteraction, error) {
 	t := time.Now()
 	since := t.AddDate(0, 0, -7)
 
@@ -29,7 +29,7 @@ func (repo RecomendationRepository) GetInteractionsByUserID(userID string) ([]mo
 	return recomendations, nil
 }
 
-func (repo RecomendationRepository) CollectUserInteraction(user []models.UserInteraction) error {
+func (repo InteractionsRepository) CollectUserInteraction(user []models.UserInteraction) error {
 	t := time.Now()
 	err := repo.Storage.AddInteraction(user[0].UserID, user)
 	if err != nil {

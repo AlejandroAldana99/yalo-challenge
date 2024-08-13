@@ -21,21 +21,21 @@ func NewInMemoryStore() *storage.InMemoryStore {
 }
 
 // Repositories
-func newRecomendationRepository(storate *storage.InMemoryStore) *repositories.RecomendationRepository {
-	return &repositories.RecomendationRepository{
+func newInteractionsRepository(storate *storage.InMemoryStore) *repositories.InteractionsRepository {
+	return &repositories.InteractionsRepository{
 		Config:  config.GetConfig(),
 		Storage: storate,
 	}
 }
 
 // Services
-func newRecomendationService(repository *repositories.RecomendationRepository) *services.RecomendationService {
-	return &services.RecomendationService{
+func newRecommendationService(repository *repositories.InteractionsRepository) *services.RecommendationService {
+	return &services.RecommendationService{
 		Repository: repository,
 	}
 }
 
-func newInteractionsService(repository *repositories.RecomendationRepository) *services.InteractionsService {
+func newInteractionsService(repository *repositories.InteractionsRepository) *services.InteractionsService {
 	return &services.InteractionsService{
 		Repository: repository,
 	}
@@ -48,7 +48,7 @@ func newInteractionsController(service *services.InteractionsService) *controlle
 	}
 }
 
-func newRecommendationController(service *services.RecomendationService) *controllers.RecommendationController {
+func newRecommendationController(service *services.RecommendationService) *controllers.RecommendationController {
 	return &controllers.RecommendationController{
 		Service: service,
 	}
@@ -69,8 +69,8 @@ func newHealthService() *services.HealthService {
 func BuildContainer() *dig.Container {
 	container := dig.New()
 	_ = container.Provide(NewInMemoryStore)
-	_ = container.Provide(newRecomendationRepository)
-	_ = container.Provide(newRecomendationService)
+	_ = container.Provide(newInteractionsRepository)
+	_ = container.Provide(newRecommendationService)
 	_ = container.Provide(newInteractionsService)
 	_ = container.Provide(newRecommendationController)
 	_ = container.Provide(newInteractionsController)

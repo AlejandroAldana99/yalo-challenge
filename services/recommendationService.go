@@ -8,11 +8,11 @@ import (
 	"github.com/AlejandroAldana99/yalo-challenge/utils"
 )
 
-type RecomendationService struct {
-	Repository repositories.IRecomendationRepository
+type RecommendationService struct {
+	Repository repositories.IInteractionsRepository
 }
 
-func (service RecomendationService) GetRecomendationsByUserID(userID string) (models.Recommendation, error) {
+func (service RecommendationService) GetRecommendationsByUserID(userID string) (models.Recommendation, error) {
 	interactions, err := service.Repository.GetInteractionsByUserID(userID)
 	if err != nil {
 		logger.Error("services", "GetRecomendationsByUserID", err.Error())
