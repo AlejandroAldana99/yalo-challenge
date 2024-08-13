@@ -19,16 +19,11 @@ func (service RecomendationService) GetRecomendationsByUserID(userID string) (mo
 		return models.Recommendation{}, errors.HandleServiceError(err)
 	}
 
-	recommendations := make(map[string]int)
-	for _, interaction := range interactions {
-		recommendations[interaction.ProductSKU]++
-	}
-
-	topProducts := utils.RankTopProducts(recommendations)
+	recomendations := utils.RankTopProducts(interactions)
 
 	response := models.Recommendation{
 		UserID:   userID,
-		Products: topProducts,
+		Products: recomendations,
 	}
 
 	return response, nil
