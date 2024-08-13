@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "fddd1162-9ef0-49b1-8340-c952309ddc2e",
+		"name": "Yalo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14151799"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "HealthCheck",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 22:29:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"pass\",\n    \"description\": \"API HealthCheck\",\n    \"version\": \"1.0\",\n    \"details\": [\n        {\n            \"componentName\": \"instance\",\n            \"componentType\": \"pod\",\n            \"componentId\": \"\",\n            \"metricValue\": 0,\n            \"metricUnit\": \"ms\",\n            \"time\": \"2024-08-11T16:29:36.3764839-06:00\",\n            \"status\": \"pass\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Interactions-Collect",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"cdfa157f-d6e1-4d2a-8b81-3afab457d8d8\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":9\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"82d09729-c725-47c7-9938-3ff666eb094d\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8bc5774f-26a0-48aa-8650-8d33f150adc2\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":8\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"5fa6635d-48ab-49da-bb19-497d10728a0a\",\r\n        \"action\":\"view\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":7\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8c71d15e-16fc-4eba-bb73-6cda4492a4a7\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"82d09729-c725-47c7-9938-3ff666eb094d\",\r\n        \"action\":\"view\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8bc5774f-26a0-48aa-8650-8d33f150adc2\",\r\n        \"action\":\"click\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":3\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/interactions/collect",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"interactions",
+						"collect"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Interactions-Collect",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"cdfa157f-d6e1-4d2a-8b81-3afab457d8d8\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":10\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"82d09729-c725-47c7-9938-3ff666eb094d\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8bc5774f-26a0-48aa-8650-8d33f150adc2\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":8\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"5fa6635d-48ab-49da-bb19-497d10728a0a\",\r\n        \"action\":\"view\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":7\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8c71d15e-16fc-4eba-bb73-6cda4492a4a7\",\r\n        \"action\":\"add_to_cart\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"82d09729-c725-47c7-9938-3ff666eb094d\",\r\n        \"action\":\"view\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":5\r\n    },\r\n    {\r\n        \"user_id\":\"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\r\n        \"product_sku\":\"8bc5774f-26a0-48aa-8650-8d33f150adc2\",\r\n        \"action\":\"click\",\r\n        \"timestamp\":\"2024-08-11T04:27:51+00:00\",\r\n        \"duration\":2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/interactions/collect",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"interactions",
+								"collect"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Aug 2024 17:59:09 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5"
+						}
+					],
+					"cookie": [],
+					"body": "null"
+				}
+			]
+		},
+		{
+			"name": "Recommendations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/recommendations/c0110dc1-26bf-440f-9879-e0f3a7f5f0e0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"recommendations",
+						"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Recommendations",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/recommendations/c0110dc1-26bf-440f-9879-e0f3a7f5f0e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"recommendations",
+								"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Aug 2024 20:56:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user_id\": \"c0110dc1-26bf-440f-9879-e0f3a7f5f0e0\",\n    \"products\": [\n        \"8bc5774f-26a0-48aa-8650-8d33f150adc2\",\n        \"82d09729-c725-47c7-9938-3ff666eb094d\",\n        \"cdfa157f-d6e1-4d2a-8b81-3afab457d8d8\"\n    ]\n}"
+				}
+			]
+		}
+	]
+}
