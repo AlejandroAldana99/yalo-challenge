@@ -15,7 +15,7 @@ type RecommendationService struct {
 func (service RecommendationService) GetRecommendationsByUserID(userID string) (models.Recommendation, error) {
 	interactions, err := service.Repository.GetInteractionsByUserID(userID)
 	if err != nil {
-		logger.Error("services", "GetRecomendationsByUserID", err.Error())
+		logger.Error("services", "GetRecommendationsByUserID", err.Error())
 		return models.Recommendation{}, errors.HandleServiceError(err)
 	}
 

@@ -21,11 +21,11 @@ func (repo InteractionsRepository) GetInteractionsByUserID(userID string) ([]mod
 
 	recomendations, err := repo.Storage.GetInteractions(userID, since)
 	if err != nil {
-		logger.Error("repositories", "GetRecomendations", err.Error())
+		logger.Error("repositories", "GetInteractionsByUserID", err.Error())
 		return []models.UserInteraction{}, errors.HandleServiceError(err)
 	}
 
-	logger.Performance("repository", "GetRecomendations", t)
+	logger.Performance("repository", "GetInteractionsByUserID", t)
 	return recomendations, nil
 }
 
